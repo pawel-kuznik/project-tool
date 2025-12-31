@@ -1,7 +1,7 @@
-import { Task } from './types/Task';
-import { Project } from './types/Project';
-import { Milestone } from './types/Milestone';
-import { Counter } from './types/Counter';
+import { Task } from './base/Task';
+import { Project } from './base/Project';
+import { Milestone } from './base/Milestone';
+import { Counter } from './base/Counter';
 
 /**
  * Serialized format for storing repository data

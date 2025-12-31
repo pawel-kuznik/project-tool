@@ -1,3 +1,4 @@
+import { Emitter, EventHandler, EventHandlerUninstaller } from '@pawel-kuznik/iventy';
 import { TagsHolder } from "./TagsHolder";
 
 /**
@@ -5,6 +6,11 @@ import { TagsHolder } from "./TagsHolder";
  *  sure that tags are normalized and processed correctly.
  */
 export class TagsList implements TagsHolder {
+
+    /**
+     *  The event emitter instance.
+     */
+    private _emitter: Emitter = new Emitter();
 
     /**
      *  The current tags.
@@ -39,7 +45,8 @@ export class TagsList implements TagsHolder {
 
         this._tags.add(this.normalize(tag));
 
-        // @todo emit event about the change of tags
+        this._emitter.trigger('changed.tags', { tags: [...this._tags] });
+
         return this;
     }
 
@@ -78,8 +85,31 @@ export class TagsList implements TagsHolder {
         
         this._tags.delete(this.normalize(tag));
         
-        // @todo emit event about the change of tags
+        this._emitter.trigger('changed.tags', { tags: [...this._tags] });
 
+        return this;
+    }
+
+    /**
+     *  Handle an event.
+     */
+    handle(event: string, callback: EventHandler) : EventHandlerUninstaller {
+        return this._emitter.handle(event, callback);
+    }
+
+    /**
+     *  Handle an event.
+     */
+    on(event: string, callback: EventHandler) : this {
+        this._emitter.on(event, callback);
+        return this;
+    }
+
+    /**
+     *  Handle an event.
+     */
+    off(event: string, callback: EventHandler) : this {
+        this._emitter.off(event, callback);
         return this;
     }
 

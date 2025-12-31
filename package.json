@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "vitest": "^4.0.16"
   },
   "dependencies": {
+    "@pawel-kuznik/iventy": "^3.0.6",
     "uuid": "^13.0.0"
   }
 }

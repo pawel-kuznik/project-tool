@@ -1,7 +1,9 @@
+import { EmitterLike } from '@pawel-kuznik/iventy';
+
 /**
  *  An interface describing an entity/item that holds tags. 
  */
-export interface TagsHolder {
+export interface TagsHolder extends EmitterLike {
 
     /**
      *  Current list of tags.
