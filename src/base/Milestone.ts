@@ -1,4 +1,4 @@
-import { Entity } from './Entity';
+import { Entity } from '../entities/Entity';
 
 /**
  * Represents a milestone with dependencies on other milestones

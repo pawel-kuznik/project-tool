@@ -1,4 +1,4 @@
-import { Entity } from './Entity';
+import { Entity } from '../entities/Entity';
 
 /**
  * Represents a project that contains tasks

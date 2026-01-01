@@ -1,5 +1,5 @@
 import { Emitter, EventHandler, EventHandlerUninstaller } from '@pawel-kuznik/iventy';
-import { TagsHolder } from "./TagsHolder";
+import { TagsHolder } from "../interfaces/TagsHolder";
 
 /**
  *  A basic implementation of the TagsHolder interface. It makes
@@ -110,6 +110,14 @@ export class TagsList implements TagsHolder {
      */
     off(event: string, callback: EventHandler) : this {
         this._emitter.off(event, callback);
+        return this;
+    }
+
+    /**
+     *  Bubble to an emitter.
+     */
+    bubbleTo(emitter: Emitter) : this {
+        this._emitter.bubbleTo(emitter);
         return this;
     }
 

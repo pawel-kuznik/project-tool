@@ -1,4 +1,4 @@
-import { Task } from './base/Task';
+import { Task } from './entities/TaskEntity';
 import { Project } from './base/Project';
 import { Milestone } from './base/Milestone';
 import { Counter } from './base/Counter';
@@ -65,28 +65,8 @@ export class Repository {
   /**
    * Create a new task and add it to the repository
    */
-  createTask(
-    title: string,
-    description?: string,
-    date?: Date,
-    duedate?: Date | null,
-    tags?: string[],
-    status?: string,
-    counter?: Counter | null,
-    projects?: string[],
-    milestones?: string[]
-  ): Task {
-    const task = new Task(
-      title,
-      description,
-      date,
-      duedate,
-      tags,
-      status,
-      counter,
-      projects,
-      milestones
-    );
+  createTask(): Task {
+    const task = new Task();
     this.tasks.set(task.id, task);
     return task;
   }
