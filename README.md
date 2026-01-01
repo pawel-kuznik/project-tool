@@ -31,7 +31,7 @@ npm install --save @pawel-kuznik/project-tool
 Notably, the repository requires access to `@pawel-kuznik/iventy` package as well
 as it's a dependency of this repository.
 
-If you are prospective recruiter or a team lead interested in hiring the author
+If you are a prospective recruiter or a team lead interested in hiring the author
 of this repository, just shoot me a message and access can be arranged :)
 
 ## Basic usage
