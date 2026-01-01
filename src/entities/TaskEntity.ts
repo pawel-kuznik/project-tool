@@ -25,28 +25,31 @@ export class TaskEntity extends Entity implements Task {
 
   /**
    * Counter tracking items in different states
+   * @todo make it private
    */
   public counter: Counter | null = null;
 
   /**
    * Array of project IDs that this task is attached to
+   * @todo make it private
    */
   public projects: string[] = [];
 
   /**
    * Array of milestone IDs that this task is attached to
+   * @todo make it private
    */
   public milestones: string[] = [];
 
   /**
    * The creation date of the task.
    */
-  public _creationDate: Date;
+  private _creationDate: Date = new Date();
 
   /**
    * The due date of the task.
    */
-  public _dueDate: Date | null;
+  private _dueDate: Date | null = null;
 
   /**
    *  Get the creation date of the task.

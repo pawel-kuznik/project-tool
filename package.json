@@ -1,9 +1,10 @@
 {
-  "name": "project-tool",
+  "name": "@pawel-kuznik/project-tool",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
