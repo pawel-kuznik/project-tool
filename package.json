@@ -1,7 +1,8 @@
 {
   "name": "@pawel-kuznik/project-tool",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "build": "tsc"
@@ -17,5 +18,8 @@
   "dependencies": {
     "@pawel-kuznik/iventy": "^3.0.6",
     "uuid": "^13.0.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
